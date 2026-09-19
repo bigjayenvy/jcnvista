@@ -76,30 +76,30 @@
   <div id="flightShade" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,18,18,.82) 0%,rgba(18,18,18,.45) 34%,rgba(18,18,18,.72) 72%,#121212 100%)"></div>
   <div data-herofade="" aria-hidden="true" style="position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:100%;text-align:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(72px,17vw,300px);line-height:.82;letter-spacing:-.04em;color:rgba(255,255,255,.055);white-space:nowrap;pointer-events:none">JC VISTA</div>
 
-  <div aria-live="polite" style="position:absolute;left:0;right:0;bottom:0;pointer-events:none">
-    <div style="position:relative;max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px) calc(clamp(48px,9vh,96px) + env(safe-area-inset-bottom))">
-      <div data-cap="0" style="position:absolute;left:clamp(20px,4vw,56px);bottom:calc(clamp(48px,9vh,96px) + env(safe-area-inset-bottom));opacity:0;transform:translateY(16px)">
+  <div aria-live="polite" style="position:absolute;inset:0;pointer-events:none">
+    <div style="position:relative;height:100%;max-width:1440px;margin:0 auto">
+      <div data-cap="0" style="position:absolute;left:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);top:50%;opacity:0;transform:translateY(calc(-50% + 16px))">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
           <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
           <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#C9C9C9">01 / 04 — Discipline</span>
         </div>
         <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.6vw,48px);line-height:1.08;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(0,0,0,.6)">Growth, Performance<br /><span style="color:#8FA9B5">&amp; Organic</span></div>
       </div>
-      <div data-cap="1" style="position:absolute;left:clamp(20px,4vw,56px);bottom:calc(clamp(48px,9vh,96px) + env(safe-area-inset-bottom));opacity:0;transform:translateY(16px)">
+      <div data-cap="1" style="position:absolute;left:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);top:50%;opacity:0;transform:translateY(calc(-50% + 16px))">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
           <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
           <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#C9C9C9">02 / 04 — Discipline</span>
         </div>
         <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.6vw,48px);line-height:1.08;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(0,0,0,.6)">Marketing Automation<br /><span style="color:#8FA9B5">&amp; AI Agent Design</span></div>
       </div>
-      <div data-cap="2" style="position:absolute;left:clamp(20px,4vw,56px);bottom:calc(clamp(48px,9vh,96px) + env(safe-area-inset-bottom));opacity:0;transform:translateY(16px)">
+      <div data-cap="2" style="position:absolute;left:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);top:50%;opacity:0;transform:translateY(calc(-50% + 16px))">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
           <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
           <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#C9C9C9">03 / 04 — Discipline</span>
         </div>
         <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.6vw,48px);line-height:1.08;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(0,0,0,.6)">SEO / SEM<br /><span style="color:#8FA9B5">&amp; Analytics</span></div>
       </div>
-      <div data-cap="3" style="position:absolute;left:clamp(20px,4vw,56px);bottom:calc(clamp(48px,9vh,96px) + env(safe-area-inset-bottom));opacity:0;transform:translateY(16px)">
+      <div data-cap="3" style="position:absolute;left:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);top:50%;opacity:0;transform:translateY(calc(-50% + 16px))">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
           <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
           <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#C9C9C9">04 / 04 — Discipline</span>
@@ -1280,7 +1280,7 @@ class Component extends DCLogic {
         const k = +el.dataset.cap;
         const a = ramp(t, k + (k === 0 ? 0.42 : 0.12), k + (k === 0 ? 0.56 : 0.26)) * (1 - ramp(t, k + 0.86, k + 0.98));
         el.style.opacity = String(a);
-        el.style.transform = 'translateY(' + (16 * (1 - a)) + 'px)';
+        el.style.transform = 'translateY(calc(-50% + ' + (16 * (1 - a)) + 'px))';
       });
       this.flightRaf = requestAnimationFrame(frame);
     };
