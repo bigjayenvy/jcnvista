@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JC Vista — Growth Marketing Leader &amp; Web Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #121212; color: #FFFFFF; font-family: Inter, system-ui, sans-serif; overflow-x: hidden; }
+  a { color: #FFFFFF; text-decoration: none; }
+  a:hover { color: #8FA9B5; }
+  ::selection { background: #4A6572; color: #fff; }
+  input, textarea, button { font-family: inherit; }
+  input:focus-visible, textarea:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid #8FA9B5; outline-offset: 3px; }
+  @keyframes mq-left { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+  @keyframes mq-right { from { transform: translate3d(-50%,0,0); } to { transform: translate3d(0,0,0); } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } [data-mq] { animation: none !important; } }
+</style>
+</helmet>
+<div style="position:relative;width:100%;background:#121212">
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s ease, border-color .35s ease, backdrop-filter .35s ease;border-bottom:1px solid {{ navBorder }};background:{{ navBg }};backdrop-filter:{{ navBlur }};-webkit-backdrop-filter:{{ navBlur }}">
+  <nav style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px);height:clamp(64px,7vw,80px);display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#fff">
+      <span style="width:7px;height:7px;background:#4A6572;flex:none"></span>JC VISTA
+    </a>
+    <div style="display:none;align-items:center;gap:clamp(18px,2.6vw,38px)" data-desknav="">
+      <a href="#about" style="font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E;transition:color .2s" style-hover="color:#FFFFFF">About</a>
+      <a href="#expertise" style="font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E;transition:color .2s" style-hover="color:#FFFFFF">Expertise</a>
+      <a href="#projects" style="font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E;transition:color .2s" style-hover="color:#FFFFFF">Projects</a>
+      <a href="#tools" style="font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E;transition:color .2s" style-hover="color:#FFFFFF">Tools</a>
+      <a href="#growth" style="font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E;transition:color .2s" style-hover="color:#FFFFFF">Growth</a>
+      <a href="#contact" style="font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#FFFFFF;border:1px solid rgba(255,255,255,.22);padding:11px 20px;border-radius:4px;transition:border-color .2s, background .2s" style-hover="border-color:#8FA9B5;background:rgba(74,101,114,.18)">Contact</a>
+    </div>
+    <button type="button" aria-label="Menu" onClick="{{ toggleMenu }}" data-mobnav="" style="display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 10px;background:transparent;border:0;cursor:pointer">
+      <span style="display:block;height:1.5px;width:100%;background:#fff"></span>
+      <span style="display:block;height:1.5px;width:100%;background:#fff"></span>
+    </button>
+  </nav>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="border-top:1px solid rgba(255,255,255,.08);background:#121212;padding:8px clamp(20px,4vw,56px) 24px;display:flex;flex-direction:column">
+      <a href="#about" onClick="{{ closeMenu }}" style="padding:16px 0;font-family:'Space Grotesk',sans-serif;font-size:20px;border-bottom:1px solid rgba(255,255,255,.07)">About</a>
+      <a href="#expertise" onClick="{{ closeMenu }}" style="padding:16px 0;font-family:'Space Grotesk',sans-serif;font-size:20px;border-bottom:1px solid rgba(255,255,255,.07)">Expertise</a>
+      <a href="#projects" onClick="{{ closeMenu }}" style="padding:16px 0;font-family:'Space Grotesk',sans-serif;font-size:20px;border-bottom:1px solid rgba(255,255,255,.07)">Projects</a>
+      <a href="#tools" onClick="{{ closeMenu }}" style="padding:16px 0;font-family:'Space Grotesk',sans-serif;font-size:20px;border-bottom:1px solid rgba(255,255,255,.07)">Tools</a>
+      <a href="#growth" onClick="{{ closeMenu }}" style="padding:16px 0;font-family:'Space Grotesk',sans-serif;font-size:20px;border-bottom:1px solid rgba(255,255,255,.07)">Growth</a>
+      <a href="#contact" onClick="{{ closeMenu }}" style="padding:16px 0;font-family:'Space Grotesk',sans-serif;font-size:20px;color:#8FA9B5">Contact</a>
+    </div>
+  </sc-if>
+</header>
+
+<section id="top" data-screen-label="Hero" style="position:relative;background:#0d0d0d">
+<div id="flightStage" style="position:sticky;top:0;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden">
+  <sc-if value="{{ film }}" hint-placeholder-val="{{ true }}">
+    <!-- Scroll-scrubbed flight: one video per leg, each leg starts on the previous leg's last frame. -->
+    <div style="position:absolute;inset:0;overflow:hidden;background:#0d0d0d">
+      <video data-leg="0" data-src="assets/flight/leg1.mp4" data-src-m="assets/flight/leg1-m.mp4" data-poster-m="assets/flight/leg1-poster-m.jpg" muted="" playsInline="" preload="none" poster="assets/flight/leg1-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1"></video>
+      <video data-leg="1" data-src="assets/flight/leg2.mp4" data-src-m="assets/flight/leg2-m.mp4" muted="" playsInline="" preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0"></video>
+      <video data-leg="2" data-src="assets/flight/leg3.mp4" data-src-m="assets/flight/leg3-m.mp4" muted="" playsInline="" preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0"></video>
+      <video data-leg="3" data-src="assets/flight/leg4.mp4" data-src-m="assets/flight/leg4-m.mp4" muted="" playsInline="" preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0"></video>
+    </div>
+  </sc-if>
+  <sc-if value="{{ still }}" hint-placeholder-val="{{ false }}">
+    <img src="assets/hero-workspace.jpg" alt="Minimal dark desk setup" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+  </sc-if>
+  <div id="flightShade" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,18,18,.82) 0%,rgba(18,18,18,.45) 34%,rgba(18,18,18,.72) 72%,#121212 100%)"></div>
+  <div data-herofade="" aria-hidden="true" style="position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:100%;text-align:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(72px,17vw,300px);line-height:.82;letter-spacing:-.04em;color:rgba(255,255,255,.055);white-space:nowrap;pointer-events:none">JC VISTA</div>
+
+  <div aria-live="polite" style="position:absolute;left:0;right:0;bottom:0;pointer-events:none">
+    <div style="position:relative;max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px) calc(clamp(48px,9vh,96px) + env(safe-area-inset-bottom))">
+      <div data-cap="0" style="position:absolute;left:clamp(20px,4vw,56px);bottom:calc(clamp(48px,9vh,96px) + env(safe-area-inset-bottom));opacity:0;transform:translateY(16px)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#C9C9C9">01 / 04 — Discipline</span>
+        </div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.6vw,48px);line-height:1.08;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(0,0,0,.6)">Growth, Performance<br /><span style="color:#8FA9B5">&amp; Organic</span></div>
+      </div>
+      <div data-cap="1" style="position:absolute;left:clamp(20px,4vw,56px);bottom:calc(clamp(48px,9vh,96px) + env(safe-area-inset-bottom));opacity:0;transform:translateY(16px)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#C9C9C9">02 / 04 — Discipline</span>
+        </div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.6vw,48px);line-height:1.08;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(0,0,0,.6)">Marketing Automation<br /><span style="color:#8FA9B5">&amp; AI Agent Design</span></div>
+      </div>
+      <div data-cap="2" style="position:absolute;left:clamp(20px,4vw,56px);bottom:calc(clamp(48px,9vh,96px) + env(safe-area-inset-bottom));opacity:0;transform:translateY(16px)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#C9C9C9">03 / 04 — Discipline</span>
+        </div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.6vw,48px);line-height:1.08;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(0,0,0,.6)">SEO / SEM<br /><span style="color:#8FA9B5">&amp; Analytics</span></div>
+      </div>
+      <div data-cap="3" style="position:absolute;left:clamp(20px,4vw,56px);bottom:calc(clamp(48px,9vh,96px) + env(safe-area-inset-bottom));opacity:0;transform:translateY(16px)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#C9C9C9">04 / 04 — Discipline</span>
+        </div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.6vw,48px);line-height:1.08;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(0,0,0,.6)">Web &amp; eCommerce<br /><span style="color:#8FA9B5">Development</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div data-herocopy="" style="position:relative;width:100%;max-width:1440px;margin:0 auto;padding:clamp(120px,14vh,180px) clamp(20px,4vw,56px) clamp(48px,7vh,80px)">
+    <div data-herogrid="" style="display:grid;grid-template-columns:1fr;gap:clamp(36px,5vw,64px);align-items:end">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(20px,3vw,30px)">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#C9C9C9">15+ Years Experience</span>
+        </div>
+        <h1 style="margin:0;font-family:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;font-weight:700;font-size:clamp(28px,5vw,64px);line-height:1.1;letter-spacing:-.045em;text-wrap:balance">Growth, Marketing,<br /><span style="color:#8FA9B5">and Tech</span></h1>
+        <p style="margin:clamp(20px,3vw,28px) 0 0;max-width:46ch;font-size:clamp(15px,1.4vw,18px);line-height:1.65;font-weight:300;color:#C9C9C9;text-wrap:pretty">Aiming to create meaningful human impact through creativity and technology.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(28px,4vw,40px)">
+          <a href="#projects" style="padding:15px 28px;border-radius:4px;background:#FFFFFF;color:#121212;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:background .2s" style-hover="background:#DCE3E6;color:#121212">See the work</a>
+          <a href="#about" style="padding:15px 28px;border-radius:4px;border:1px solid rgba(255,255,255,.24);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:border-color .2s" style-hover="border-color:#8FA9B5">The approach</a>
+        </div>
+      </div>
+
+      <aside data-directline="" style="border:1px solid rgba(255,255,255,.16);border-radius:4px;background:rgba(30,30,30,.42);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);padding:clamp(24px,3vw,34px);max-width:420px;box-shadow:0 24px 60px rgba(0,0,0,.4)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#C9C9C9">Direct line</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <a href="mailto:jcnvista@gmail.com" style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(255,255,255,.12)">
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Email</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:15px">jcnvista@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/jcvista" target="_blank" rel="noopener" style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(255,255,255,.12)">
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">LinkedIn</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:15px">/in/jcvista</span>
+          </a>
+        </div>
+        <a href="#contact" style="display:block;margin-top:22px;text-align:center;padding:16px;border-radius:4px;background:#4A6572;color:#FFFFFF;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:background .2s" style-hover="background:#5B7B8A;color:#fff">Let's Talk Growth</a>
+      </aside>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="about" data-screen-label="About" data-reveal="" style="max-width:1440px;margin:0 auto;padding:clamp(80px,12vh,150px) clamp(20px,4vw,56px)">
+  <div data-split="" style="display:grid;grid-template-columns:1fr;gap:clamp(36px,5vw,72px);align-items:center">
+    <figure style="margin:0;position:relative;border-radius:4px;overflow:hidden;background:#1E1E1E">
+      <img src="assets/morning-focus.jpg" alt="Hands in a black sweater holding a grey ceramic mug of cappuccino" loading="lazy" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover" />
+    </figure>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(20px,3vw,28px)">
+        <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
+        <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#8E8E8E">About</span>
+      </div>
+      <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,52px);line-height:1.12;letter-spacing:-.03em;text-wrap:pretty">The environment dictates the workflow — and the workflow dictates the growth.</h2>
+      <p style="margin:clamp(22px,3vw,32px) 0 0;max-width:56ch;font-size:clamp(15px,1.3vw,17px);line-height:1.75;font-weight:300;color:#C9C9C9;text-wrap:pretty">Growth marketing leader with 15+ years across digital strategy, marketing automation, performance media, and web development. I've worked in real estate, banking &amp; finance, retail, F&amp;B, architecture &amp; design, wellness clinics, publishing, and automotive.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;margin-top:clamp(32px,4vw,48px);background:rgba(255,255,255,.1)">
+        <div style="background:#121212;padding:22px 20px 20px">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3vw,38px);letter-spacing:-.03em">15+</div>
+          <div style="margin-top:6px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Years</div>
+        </div>
+        <div style="background:#121212;padding:22px 20px 20px">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3vw,38px);letter-spacing:-.03em">8</div>
+          <div style="margin-top:6px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Industries</div>
+        </div>
+        <div style="background:#121212;padding:22px 20px 20px">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3vw,38px);letter-spacing:-.03em">4</div>
+          <div style="margin-top:6px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Disciplines</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="expertise" data-screen-label="Expertise" data-reveal="" style="border-top:1px solid rgba(255,255,255,.08)">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,12vh,150px) clamp(20px,4vw,56px)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(20px,3vw,28px)">
+      <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
+      <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#8E8E8E">Core Expertise</span>
+    </div>
+    <h2 style="margin:0 0 clamp(40px,6vw,72px);font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(26px,3.4vw,46px);line-height:1.14;letter-spacing:-.03em;max-width:22ch;text-wrap:pretty">Four disciplines, one operating system.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden">
+      <article style="background:#1E1E1E;padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:14px;min-height:clamp(190px,19vw,240px);transition:background .25s" style-hover="background:#242424">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.14em;color:#8FA9B5">01</span>
+        <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(19px,1.8vw,24px);line-height:1.22;letter-spacing:-.02em">Growth, Performance &amp; Organic</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;font-weight:300;color:#B4B4B4">Full-funnel paid acquisition and creative testing across Google, Meta and LinkedIn, alongside the organic engine — content cadence, social growth and owned channels built to compound rather than rent reach.</p>
+        </article>
+      <article style="background:#1E1E1E;padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:14px;min-height:clamp(190px,19vw,240px);transition:background .25s" style-hover="background:#242424">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.14em;color:#8FA9B5">02</span>
+        <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(19px,1.8vw,24px);line-height:1.22;letter-spacing:-.02em">Marketing Automation &amp; AI Agent Design</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;font-weight:300;color:#B4B4B4">Lifecycle flows, lead routing and custom agents that take the repeatable work off the team and keep the pipeline moving.</p>
+        </article>
+      <article style="background:#1E1E1E;padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:14px;min-height:clamp(190px,19vw,240px);transition:background .25s" style-hover="background:#242424">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.14em;color:#8FA9B5">03</span>
+        <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(19px,1.8vw,24px);line-height:1.22;letter-spacing:-.02em">SEO / SEM &amp; Analytics</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;font-weight:300;color:#B4B4B4">Technical SEO, search intent architecture and measurement — marketing mix modelling and dashboards that executives actually read.</p>
+        </article>
+      <article style="background:#1E1E1E;padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:14px;min-height:clamp(190px,19vw,240px);transition:background .25s" style-hover="background:#242424">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.14em;color:#8FA9B5">04</span>
+        <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(19px,1.8vw,24px);line-height:1.22;letter-spacing:-.02em">Web &amp; eCommerce Development</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;font-weight:300;color:#B4B4B4">Custom builds and storefronts from database to front end — shipped fast, instrumented from day one, owned long term.</p>
+        </article>
+    </div>
+  </div>
+</section>
+
+<section id="projects" data-screen-label="Projects" data-reveal="" style="border-top:1px solid rgba(255,255,255,.08)">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,12vh,150px) clamp(20px,4vw,56px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(40px,6vw,72px)">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(20px,3vw,28px)">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#8E8E8E">Projects / Works</span>
+        </div>
+        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(26px,3.4vw,46px);line-height:1.14;letter-spacing:-.03em;max-width:24ch;text-wrap:pretty">Recent builds, live and in production.</h2>
+      </div>
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Ten selected</span>
+    </div>
+    <div data-masonry="" style="columns:1;column-gap:clamp(16px,1.6vw,22px)">
+      <a href="https://bigcavestudios.com" target="_blank" rel="noopener" style="display:block;break-inside:avoid;margin-bottom:clamp(16px,1.6vw,22px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;overflow:hidden;transition:border-color .25s, transform .25s" style-hover="border-color:#8FA9B5;transform:translateY(-3px)">
+        <div style="display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="margin-left:8px;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;color:#8E8E8E;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">bigcavestudios.com</span>
+        </div>
+        <div style="padding:clamp(24px,2.6vw,34px);min-height:230px;display:flex;flex-direction:column;justify-content:space-between;gap:28px">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+            <span style="display:inline-flex;align-items:center;height:64px;padding:10px 14px;border-radius:4px;background:#0d0d0d;border:1px solid rgba(255,255,255,.08)"><img src="assets/logos/bigcave.png" alt="Big Cave Studios logo" loading="lazy" style="display:block;height:100%;width:auto;max-width:190px;object-fit:contain" /></span>
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Creative Studio</span>
+          </div>
+          <div>
+            <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.02em">Big Cave Studios</h3>
+            <p style="margin:10px 0 0;font-size:13.5px;line-height:1.65;font-weight:300;color:#B4B4B4">Brand site and production portfolio with a custom CMS.</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://zimpan.com" target="_blank" rel="noopener" style="display:block;break-inside:avoid;margin-bottom:clamp(16px,1.6vw,22px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;overflow:hidden;transition:border-color .25s, transform .25s" style-hover="border-color:#8FA9B5;transform:translateY(-3px)">
+        <div style="display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="margin-left:8px;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;color:#8E8E8E;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">zimpan.com</span>
+        </div>
+        <div style="padding:clamp(24px,2.6vw,34px);min-height:320px;display:flex;flex-direction:column;justify-content:space-between;gap:28px">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+            <span style="display:inline-flex;align-items:center;height:64px;padding:10px 14px;border-radius:4px;background:transparent;border:1px solid rgba(255,255,255,.08)"><img src="assets/logos/zimpan.svg" alt="Zimpan logo" loading="lazy" style="display:block;height:100%;width:auto;max-width:190px;object-fit:contain" /></span>
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">eCommerce</span>
+          </div>
+          <div>
+            <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.02em">Zimpan</h3>
+            <p style="margin:10px 0 0;font-size:13.5px;line-height:1.65;font-weight:300;color:#B4B4B4">Storefront build, checkout optimisation and paid acquisition wired to a single revenue dashboard.</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://thexperiencestore.com" target="_blank" rel="noopener" style="display:block;break-inside:avoid;margin-bottom:clamp(16px,1.6vw,22px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;overflow:hidden;transition:border-color .25s, transform .25s" style-hover="border-color:#8FA9B5;transform:translateY(-3px)">
+        <div style="display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="margin-left:8px;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;color:#8E8E8E;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">thexperiencestore.com</span>
+        </div>
+        <div style="padding:clamp(24px,2.6vw,34px);min-height:250px;display:flex;flex-direction:column;justify-content:space-between;gap:28px">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+            <span style="display:inline-flex;align-items:center;height:64px;padding:10px 14px;border-radius:4px;background:#0d0d0d;border:1px solid rgba(255,255,255,.08)"><img src="assets/logos/experience-store.png" alt="The Experience Store logo" loading="lazy" style="display:block;height:100%;width:auto;max-width:190px;object-fit:contain" /></span>
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Retail</span>
+          </div>
+          <div>
+            <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.02em">The Experience Store</h3>
+            <p style="margin:10px 0 0;font-size:13.5px;line-height:1.65;font-weight:300;color:#B4B4B4">Shopify platform with automated lifecycle messaging.</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://vervewellness.ae" target="_blank" rel="noopener" style="display:block;break-inside:avoid;margin-bottom:clamp(16px,1.6vw,22px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;overflow:hidden;transition:border-color .25s, transform .25s" style-hover="border-color:#8FA9B5;transform:translateY(-3px)">
+        <div style="display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="margin-left:8px;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;color:#8E8E8E;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">vervewellness.ae</span>
+        </div>
+        <div style="padding:clamp(24px,2.6vw,34px);min-height:270px;display:flex;flex-direction:column;justify-content:space-between;gap:28px">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+            <span style="display:inline-flex;align-items:center;height:64px;padding:10px 14px;border-radius:4px;background:#0d0d0d;border:1px solid rgba(255,255,255,.08)"><img src="assets/logos/verve.png" alt="Vervé Wellness logo" loading="lazy" style="display:block;height:100%;width:auto;max-width:190px;object-fit:contain" /></span>
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Wellness Clinic</span>
+          </div>
+          <div>
+            <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.02em">Vervé Wellness</h3>
+            <p style="margin:10px 0 0;font-size:13.5px;line-height:1.65;font-weight:300;color:#B4B4B4">Booking-led site with an AI intake agent handling first response.</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://entrepmindsconsultancy.ai" target="_blank" rel="noopener" style="display:block;break-inside:avoid;margin-bottom:clamp(16px,1.6vw,22px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;overflow:hidden;transition:border-color .25s, transform .25s" style-hover="border-color:#8FA9B5;transform:translateY(-3px)">
+        <div style="display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="margin-left:8px;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;color:#8E8E8E;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">entrepmindsconsultancy.ai</span>
+        </div>
+        <div style="padding:clamp(24px,2.6vw,34px);min-height:230px;display:flex;flex-direction:column;justify-content:space-between;gap:28px">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+            <span style="display:inline-flex;align-items:center;height:64px;padding:10px 14px;border-radius:4px;background:#F2F0EC;border:1px solid rgba(255,255,255,.08)"><img src="assets/logos/entrepminds.png" alt="Entrepminds Consultancy logo" loading="lazy" style="display:block;height:100%;width:auto;max-width:190px;object-fit:contain" /></span>
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Consultancy</span>
+          </div>
+          <div>
+            <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.02em">Entrepminds Consultancy</h3>
+            <p style="margin:10px 0 0;font-size:13.5px;line-height:1.65;font-weight:300;color:#B4B4B4">Positioning, site and inbound engine for a B2B advisory.</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://whiteaurabeautyacademy.com" target="_blank" rel="noopener" style="display:block;break-inside:avoid;margin-bottom:clamp(16px,1.6vw,22px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;overflow:hidden;transition:border-color .25s, transform .25s" style-hover="border-color:#8FA9B5;transform:translateY(-3px)">
+        <div style="display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="margin-left:8px;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;color:#8E8E8E;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">whiteaurabeautyacademy.com</span>
+        </div>
+        <div style="padding:clamp(24px,2.6vw,34px);min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:28px">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+            <span style="display:inline-flex;align-items:center;height:64px;padding:10px 14px;border-radius:4px;background:#FFFFFF;border:1px solid rgba(255,255,255,.08)"><img src="assets/logos/white-aura.png" alt="White Aura Beauty Academy logo" loading="lazy" style="display:block;height:100%;width:auto;max-width:190px;object-fit:contain" /></span>
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Education</span>
+          </div>
+          <div>
+            <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.02em">White Aura Beauty Academy</h3>
+            <p style="margin:10px 0 0;font-size:13.5px;line-height:1.65;font-weight:300;color:#B4B4B4">Course enrolment funnel, landing system and lead scoring.</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://macnovatech.com" target="_blank" rel="noopener" style="display:block;break-inside:avoid;margin-bottom:clamp(16px,1.6vw,22px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;overflow:hidden;transition:border-color .25s, transform .25s" style-hover="border-color:#8FA9B5;transform:translateY(-3px)">
+        <div style="display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="margin-left:8px;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;color:#8E8E8E;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">macnovatech.com</span>
+        </div>
+        <div style="padding:clamp(24px,2.6vw,34px);min-height:240px;display:flex;flex-direction:column;justify-content:space-between;gap:28px">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+            <span style="display:inline-flex;align-items:center;height:64px;padding:10px 14px;border-radius:4px;background:#F2F0EC;border:1px solid rgba(255,255,255,.08)"><img src="assets/logos/macnova.png" alt="Macnova Technologies logo" loading="lazy" style="display:block;height:100%;width:auto;max-width:190px;object-fit:contain" /></span>
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Technology</span>
+          </div>
+          <div>
+            <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.02em">Macnova Tech</h3>
+            <p style="margin:10px 0 0;font-size:13.5px;line-height:1.65;font-weight:300;color:#B4B4B4">Product marketing site with a headless content layer.</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://blackmoose.ae" target="_blank" rel="noopener" style="display:block;break-inside:avoid;margin-bottom:clamp(16px,1.6vw,22px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;overflow:hidden;transition:border-color .25s, transform .25s" style-hover="border-color:#8FA9B5;transform:translateY(-3px)">
+        <div style="display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="margin-left:8px;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;color:#8E8E8E;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">blackmoose.ae</span>
+        </div>
+        <div style="padding:clamp(24px,2.6vw,34px);min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:28px">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+            <span style="display:inline-flex;align-items:center;height:64px;padding:10px 14px;border-radius:4px;background:#0d0d0d;border:1px solid rgba(255,255,255,.08)"><img src="assets/logos/blackmoose.png" alt="Blackmoose logo" loading="lazy" style="display:block;height:100%;width:auto;max-width:190px;object-fit:contain" /></span>
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Lifestyle Brand</span>
+          </div>
+          <div>
+            <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.02em">Blackmoose</h3>
+            <p style="margin:10px 0 0;font-size:13.5px;line-height:1.65;font-weight:300;color:#B4B4B4">Launch campaign, creative testing and a lean owned-media stack.</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://macwise.co" target="_blank" rel="noopener" style="display:block;break-inside:avoid;margin-bottom:clamp(16px,1.6vw,22px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;overflow:hidden;transition:border-color .25s, transform .25s" style-hover="border-color:#8FA9B5;transform:translateY(-3px)">
+        <div style="display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="margin-left:8px;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;color:#8E8E8E;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">macwise.co</span>
+        </div>
+        <div style="padding:clamp(24px,2.6vw,34px);min-height:230px;display:flex;flex-direction:column;justify-content:space-between;gap:28px">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+            <span style="display:inline-flex;align-items:center;height:64px;padding:10px 14px;border-radius:4px;background:#0d0d0d;border:1px solid rgba(255,255,255,.08)"><img src="assets/logos/macwise.png" alt="Macwise logo" loading="lazy" style="display:block;height:100%;width:auto;max-width:190px;object-fit:contain" /></span>
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Services</span>
+          </div>
+          <div>
+            <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.02em">Macwise</h3>
+            <p style="margin:10px 0 0;font-size:13.5px;line-height:1.65;font-weight:300;color:#B4B4B4">Service catalogue, booking flow and local search build-out.</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://macwisetitans.com" target="_blank" rel="noopener" style="display:block;break-inside:avoid;margin-bottom:clamp(16px,1.6vw,22px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;overflow:hidden;transition:border-color .25s, transform .25s" style-hover="border-color:#8FA9B5;transform:translateY(-3px)">
+        <div style="display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
+          <span style="margin-left:8px;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;color:#8E8E8E;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">macwisetitans.com</span>
+        </div>
+        <div style="padding:clamp(24px,2.6vw,34px);min-height:260px;display:flex;flex-direction:column;justify-content:space-between;gap:28px">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+            <span style="display:inline-flex;align-items:center;height:64px;padding:10px 14px;border-radius:4px;background:#0d0d0d;border:1px solid rgba(255,255,255,.08)"><img src="assets/logos/macwise-titans.png" alt="Macwise Titans logo" loading="lazy" style="display:block;height:100%;width:auto;max-width:190px;object-fit:contain" /></span>
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Community</span>
+          </div>
+          <div>
+            <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.02em">Macwise Titans</h3>
+            <p style="margin:10px 0 0;font-size:13.5px;line-height:1.65;font-weight:300;color:#B4B4B4">Membership platform with automated onboarding journeys.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<section id="tools" data-screen-label="Setup and tools" data-reveal="" style="border-top:1px solid rgba(255,255,255,.08);overflow:hidden">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,12vh,150px) 0">
+    <div data-split="" style="display:grid;grid-template-columns:1fr;gap:clamp(36px,5vw,72px);align-items:center;padding:0 clamp(20px,4vw,56px)">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(20px,3vw,28px)">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#8E8E8E">The Setup</span>
+        </div>
+        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(26px,3.4vw,46px);line-height:1.14;letter-spacing:-.03em;text-wrap:pretty">A stack chosen for leverage, not for the logo wall.</h2>
+        <p style="margin:clamp(20px,3vw,28px) 0 0;max-width:50ch;font-size:15px;line-height:1.75;font-weight:300;color:#C9C9C9;text-wrap:pretty">Dual monitors, one dark room, and a toolchain wired so data, creative and code move in the same direction. Every platform below is one I build in, not one I've read about.</p>
+      </div>
+      <figure style="margin:0;border-radius:4px;overflow:hidden;background:#1E1E1E">
+        <img src="assets/setup-desk.jpg" alt="JC Vista working at a multi-monitor desk with a latte beside the keyboard" loading="lazy" style="display:block;width:100%;aspect-ratio:3/2;object-fit:cover;object-position:62% 50%" />
+      </figure>
+    </div>
+
+    <div style="margin-top:clamp(48px,7vw,88px);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:clamp(22px,3vw,34px) 0;display:flex;flex-direction:column;gap:clamp(14px,2vw,22px)">
+      <div style="display:flex;width:max-content;animation:mq-left 46s linear infinite" data-mq="">
+        <div style="display:flex;gap:clamp(14px,2vw,22px);padding-right:clamp(14px,2vw,22px)">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">n8n</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">HubSpot</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">Respond.io</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">Google Looker Studio</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">GA4</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">SEMrush</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">Custom AI agents</span>
+        </div>
+        <div style="display:flex;gap:clamp(14px,2vw,22px);padding-right:clamp(14px,2vw,22px)" aria-hidden="true">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">n8n</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">HubSpot</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">Respond.io</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">Google Looker Studio</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">GA4</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">SEMrush</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#FFFFFF;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:12px 22px;white-space:nowrap">Custom AI agents</span>
+        </div>
+      </div>
+      <div style="display:flex;width:max-content;animation:mq-right 52s linear infinite" data-mq="">
+        <div style="display:flex;gap:clamp(14px,2vw,22px);padding-right:clamp(14px,2vw,22px)">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#8E8E8E;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 22px;white-space:nowrap">Google Ads</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#8E8E8E;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 22px;white-space:nowrap">Meta Business Suite</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#8E8E8E;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 22px;white-space:nowrap">React</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#8E8E8E;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 22px;white-space:nowrap">WordPress</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#8E8E8E;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 22px;white-space:nowrap">Shopify</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#8E8E8E;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 22px;white-space:nowrap">Figma</span>
+        </div>
+        <div style="display:flex;gap:clamp(14px,2vw,22px);padding-right:clamp(14px,2vw,22px)" aria-hidden="true">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#8E8E8E;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 22px;white-space:nowrap">Google Ads</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#8E8E8E;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 22px;white-space:nowrap">Meta Business Suite</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#8E8E8E;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 22px;white-space:nowrap">React</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#8E8E8E;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 22px;white-space:nowrap">WordPress</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#8E8E8E;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 22px;white-space:nowrap">Shopify</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,19px);color:#8E8E8E;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 22px;white-space:nowrap">Figma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="growth" data-screen-label="Growth in Action" data-reveal="" style="border-top:1px solid rgba(255,255,255,.08)">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,12vh,150px) clamp(20px,4vw,56px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(40px,6vw,72px)">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(20px,3vw,28px)">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#8E8E8E">Growth in Action</span>
+        </div>
+        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(26px,3.4vw,46px);line-height:1.14;letter-spacing:-.03em;max-width:24ch;text-wrap:pretty">Live accounts, real numbers, pulled straight from the dashboards.</h2>
+      </div>
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">2026 · Paid &amp; Organic</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:clamp(24px,3vw,34px)">
+      <span style="width:8px;height:8px;border-radius:50%;background:#4A6572;flex:none"></span><span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(18px,2.1vw,26px);letter-spacing:-.01em;color:#FFFFFF">Performance Marketing</span>
+      <span style="flex:1;height:1px;background:rgba(255,255,255,.12)"></span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:clamp(16px,1.8vw,24px)">
+      <article data-case="" style="display:grid;grid-template-columns:1fr;gap:clamp(24px,3vw,40px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;padding:clamp(24px,3vw,40px)">
+        <div>
+          <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Retail · Google Ads</span>
+          <h3 style="margin:12px 0 0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(21px,2.3vw,28px);line-height:1.15;letter-spacing:-.02em">The Experience Store</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.7;font-weight:300;color:#B4B4B4">Iftar Campaign 2026 — a two-week seasonal push held to a strict AED20 target CPA on an AED200 daily budget.</p>
+          <dl style="margin:22px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden">
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">517</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Clicks</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">9.99%</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">CTR</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">331</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Conversions</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">AED 3.36</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Avg. CPC</dt>
+            </div>
+          </dl>
+          <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px">
+            <span style="font-size:11px;letter-spacing:.06em;color:#8E8E8E;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:6px 10px">Feb 19 – Mar 3, 2026</span>
+            <span style="font-size:11px;letter-spacing:.06em;color:#8E8E8E;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:6px 10px">AED 200 / day</span>
+            <span style="font-size:11px;letter-spacing:.06em;color:#8E8E8E;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:6px 10px">tCPA AED 20</span>
+          </div>
+          <a href="https://thexperiencestore.com" target="_blank" rel="noopener" style="display:inline-block;margin-top:20px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8FA9B5;border-bottom:1px solid rgba(143,169,181,.4);padding-bottom:3px">thexperiencestore.com</a>
+        </div>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:10px">
+          <div style="border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#161616;padding:clamp(22px,2.4vw,32px)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:clamp(22px,2.4vw,30px)">
+              <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Campaign funnel</span>
+              <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.06em;color:#8FA9B5">64.0% click-to-lead</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:clamp(16px,1.8vw,22px)">
+              <div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px">
+                  <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Impressions</span>
+                  <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,18px);letter-spacing:-.01em">5,175</span>
+                </div>
+                <div style="height:10px;border-radius:2px;background:rgba(255,255,255,.07);overflow:hidden">
+                  <div style="height:100%;width:100%;background:#4A6572"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px">
+                  <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Clicks · 9.99% CTR</span>
+                  <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,18px);letter-spacing:-.01em">517</span>
+                </div>
+                <div style="height:10px;border-radius:2px;background:rgba(255,255,255,.07);overflow:hidden">
+                  <div style="height:100%;width:10%;min-width:14px;background:#4A6572"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px">
+                  <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8FA9B5">Conversions</span>
+                  <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,18px);letter-spacing:-.01em;color:#FFFFFF">331</span>
+                </div>
+                <div style="height:10px;border-radius:2px;background:rgba(255,255,255,.07);overflow:hidden">
+                  <div style="height:100%;width:6.4%;min-width:14px;background:#8FA9B5"></div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:clamp(24px,2.6vw,32px);padding-top:clamp(20px,2.2vw,26px);border-top:1px solid rgba(255,255,255,.1)">
+              <div>
+                <div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:-.02em">AED 5.25</div>
+                <div style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Cost per conversion</div>
+              </div>
+              <div>
+                <div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:-.02em;color:#8FA9B5">74% below</div>
+                <div style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">vs AED 20 tCPA</div>
+              </div>
+            </div>
+          </div>
+          <figcaption style="font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;letter-spacing:.04em;color:#8E8E8E">Google Ads · Feb 19 – Mar 3 2026 · impressions and CPA derived from reported clicks, CTR and spend</figcaption>
+        </figure>
+      </article>
+
+      <article data-case="" style="display:grid;grid-template-columns:1fr;gap:clamp(24px,3vw,40px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;padding:clamp(24px,3vw,40px)">
+        <div>
+          <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Wellness Clinic · Search + Performance Max</span>
+          <h3 style="margin:12px 0 0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(21px,2.3vw,28px);line-height:1.15;letter-spacing:-.02em">Vervé Wellness</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.7;font-weight:300;color:#B4B4B4">IV drips, peptide therapy and home-visit diagnostics. Opened at AED180/day, scaled +30% out of the learning phase and +50% again once CPA held.</p>
+          <dl style="margin:22px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden">
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">8.03K</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Clicks</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">628</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Conversions</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">AED 64.8K</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Spend</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">AED 8.07</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Avg. CPC</dt>
+            </div>
+          </dl>
+          <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px">
+            <span style="font-size:11px;letter-spacing:.06em;color:#8E8E8E;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:6px 10px">Jan 1 – Sep 17, 2026</span>
+            <span style="font-size:11px;letter-spacing:.06em;color:#8E8E8E;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:6px 10px">AED 180 → +30% → +50%</span>
+          </div>
+          <a href="https://vervewellness.ae" target="_blank" rel="noopener" style="display:inline-block;margin-top:20px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8FA9B5;border-bottom:1px solid rgba(143,169,181,.4);padding-bottom:3px">vervewellness.ae</a>
+        </div>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:10px">
+          <div style="border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#161616;padding:clamp(22px,2.4vw,32px)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:clamp(22px,2.4vw,30px)">
+              <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Daily budget, scaled in three steps</span>
+              <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.06em;color:#8FA9B5">+95%</span>
+            </div>
+            <div style="display:flex;align-items:flex-end;gap:clamp(14px,2vw,26px);height:clamp(150px,17vw,200px);border-bottom:1px solid rgba(255,255,255,.14)">
+              <div style="flex:1;height:100%;display:flex;flex-direction:column;gap:10px">
+                <span style="flex:none;text-align:center;font-family:'Space Grotesk',sans-serif;font-size:clamp(14px,1.4vw,17px);letter-spacing:-.01em">AED 180</span>
+                <div style="flex:1;min-height:0;display:flex;align-items:flex-end">
+                  <div style="width:100%;height:51%;background:#3A4F5A;border-radius:2px 2px 0 0"></div>
+                </div>
+              </div>
+              <div style="flex:1;height:100%;display:flex;flex-direction:column;gap:10px">
+                <span style="flex:none;text-align:center;font-family:'Space Grotesk',sans-serif;font-size:clamp(14px,1.4vw,17px);letter-spacing:-.01em">AED 234</span>
+                <div style="flex:1;min-height:0;display:flex;align-items:flex-end">
+                  <div style="width:100%;height:67%;background:#4A6572;border-radius:2px 2px 0 0"></div>
+                </div>
+              </div>
+              <div style="flex:1;height:100%;display:flex;flex-direction:column;gap:10px">
+                <span style="flex:none;text-align:center;font-family:'Space Grotesk',sans-serif;font-size:clamp(14px,1.4vw,17px);letter-spacing:-.01em;color:#FFFFFF">AED 351</span>
+                <div style="flex:1;min-height:0;display:flex;align-items:flex-end">
+                  <div style="width:100%;height:100%;background:#8FA9B5;border-radius:2px 2px 0 0"></div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;gap:clamp(14px,2vw,26px);margin-top:12px">
+              <span style="flex:1;text-align:center;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8E8E8E">Launch</span>
+              <span style="flex:1;text-align:center;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8E8E8E">+30% post-learning</span>
+              <span style="flex:1;text-align:center;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8E8E8E">+50% final scale</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:clamp(24px,2.6vw,32px);padding-top:clamp(20px,2.2vw,26px);border-top:1px solid rgba(255,255,255,.1)">
+              <div>
+                <div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:-.02em">7.82%</div>
+                <div style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Click-to-lead rate</div>
+              </div>
+              <div>
+                <div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:-.02em;color:#8FA9B5">AED 103</div>
+                <div style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Cost per conversion</div>
+              </div>
+              <div>
+                <div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:-.02em">8.5 mo</div>
+                <div style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Continuous run</div>
+              </div>
+            </div>
+          </div>
+          <figcaption style="font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;letter-spacing:.04em;color:#8E8E8E">Google Ads · Dec 29 2025 – Sep 14 2026 · rates derived from reported clicks, conversions and spend</figcaption>
+        </figure>
+      </article>
+
+      <article data-case="" style="display:grid;grid-template-columns:1fr;gap:clamp(24px,3vw,40px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;padding:clamp(24px,3vw,40px)">
+        <div>
+          <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Leisure Rentals · Search + Performance Max</span>
+          <h3 style="margin:12px 0 0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(21px,2.3vw,28px);line-height:1.15;letter-spacing:-.02em">Blackmoose Jetski</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.7;font-weight:300;color:#B4B4B4">Jetski rentals on a fixed AED6,000 monthly budget and an AED80 target CPA — 436 booked conversions in eight weeks.</p>
+          <dl style="margin:22px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden">
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">436</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Conversions</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">16.5K</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Clicks</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">601K</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Impressions</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">AED 6.64K</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Spend</dt>
+            </div>
+          </dl>
+          <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px">
+            <span style="font-size:11px;letter-spacing:.06em;color:#8E8E8E;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:6px 10px">Jul 21 – Sep 18, 2026</span>
+            <span style="font-size:11px;letter-spacing:.06em;color:#8E8E8E;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:6px 10px">2.74% CTR</span>
+            <span style="font-size:11px;letter-spacing:.06em;color:#8E8E8E;border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:6px 10px">tCPA AED 80</span>
+          </div>
+          <a href="https://blackmoose.ae" target="_blank" rel="noopener" style="display:inline-block;margin-top:20px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8FA9B5;border-bottom:1px solid rgba(143,169,181,.4);padding-bottom:3px">blackmoose.ae</a>
+        </div>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:10px">
+          <div style="border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#161616;padding:clamp(22px,2.4vw,32px)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:clamp(22px,2.4vw,30px)">
+              <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Campaign funnel</span>
+              <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.06em;color:#8FA9B5">2.64% click-to-booking</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:clamp(16px,1.8vw,22px)">
+              <div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px">
+                  <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Impressions</span>
+                  <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,18px);letter-spacing:-.01em">601,000</span>
+                </div>
+                <div style="height:10px;border-radius:2px;background:rgba(255,255,255,.07);overflow:hidden">
+                  <div style="height:100%;width:100%;background:#4A6572"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px">
+                  <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Clicks · 2.74% CTR</span>
+                  <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,18px);letter-spacing:-.01em">16,500</span>
+                </div>
+                <div style="height:10px;border-radius:2px;background:rgba(255,255,255,.07);overflow:hidden">
+                  <div style="height:100%;width:2.74%;min-width:14px;background:#4A6572"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px">
+                  <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8FA9B5">Conversions</span>
+                  <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,18px);letter-spacing:-.01em;color:#FFFFFF">436</span>
+                </div>
+                <div style="height:10px;border-radius:2px;background:rgba(255,255,255,.07);overflow:hidden">
+                  <div style="height:100%;width:0.7%;min-width:14px;background:#8FA9B5"></div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:clamp(24px,2.6vw,32px);padding-top:clamp(20px,2.2vw,26px);border-top:1px solid rgba(255,255,255,.1)">
+              <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E;margin-bottom:16px">Cost per conversion vs target</div>
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <div>
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px">
+                    <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Target</span>
+                    <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,18px);letter-spacing:-.01em">AED 80.00</span>
+                  </div>
+                  <div style="height:10px;border-radius:2px;background:rgba(255,255,255,.07);overflow:hidden">
+                    <div style="height:100%;width:100%;background:rgba(255,255,255,.16)"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px">
+                    <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8FA9B5">Actual</span>
+                    <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,18px);letter-spacing:-.01em;color:#FFFFFF">AED 15.23</span>
+                  </div>
+                  <div style="height:10px;border-radius:2px;background:rgba(255,255,255,.07);overflow:hidden">
+                    <div style="height:100%;width:19%;background:#8FA9B5"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption style="font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;letter-spacing:.04em;color:#8E8E8E">Google Ads · Jul 21 – Sep 18 2026 · cost per conversion derived from reported spend and conversions</figcaption>
+        </figure>
+      </article>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:14px;margin:clamp(48px,6vw,80px) 0 clamp(24px,3vw,34px)">
+      <span style="width:8px;height:8px;border-radius:50%;background:#4A6572;flex:none"></span><span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(18px,2.1vw,26px);letter-spacing:-.01em;color:#FFFFFF">Organic Growth</span>
+      <span style="flex:1;height:1px;background:rgba(255,255,255,.12)"></span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:clamp(16px,1.8vw,24px)">
+      <article data-case="" style="display:grid;grid-template-columns:1fr;gap:clamp(24px,3vw,40px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;padding:clamp(24px,3vw,40px)">
+        <div>
+          <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Instagram · @vervewellnessdxb</span>
+          <h3 style="margin:12px 0 0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(21px,2.3vw,28px);line-height:1.15;letter-spacing:-.02em">Vervé Wellness</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.7;font-weight:300;color:#B4B4B4">Clinic-led content at roughly two and a half posts a week — steady compounding rather than spikes, with the sharpest lift after the July cadence change.</p>
+          <dl style="margin:22px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden">
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">5,148</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Followers</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">+615</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Net gain, YTD</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">6.34</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Followers / post</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">97</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Posts published</dt>
+            </div>
+          </dl>
+        </div>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:10px">
+          <div style="border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#161616;padding:clamp(22px,2.4vw,32px)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px">
+              <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Audience, year to date</span>
+              <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.06em;color:#8FA9B5">+13.6%</span>
+            </div>
+            <div style="display:flex;height:clamp(40px,4.4vw,52px);border-radius:2px;overflow:hidden;background:rgba(255,255,255,.07)">
+              <div style="width:88%;background:#3A4F5A"></div>
+              <div style="width:12%;background:#8FA9B5"></div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:22px;margin-top:14px">
+              <div style="display:flex;align-items:center;gap:9px">
+                <span style="width:9px;height:9px;background:#3A4F5A;flex:none"></span>
+                <span style="font-size:11.5px;color:#8E8E8E">4,533 at Jan 1</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:9px">
+                <span style="width:9px;height:9px;background:#8FA9B5;flex:none"></span>
+                <span style="font-size:11.5px;color:#FFFFFF">+615 added</span>
+              </div>
+            </div>
+            <div style="margin-top:clamp(24px,2.6vw,32px);padding-top:clamp(20px,2.2vw,26px);border-top:1px solid rgba(255,255,255,.1)">
+              <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E;margin-bottom:16px">Followers per post · across both accounts</div>
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <div>
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px">
+                    <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8FA9B5">Vervé Wellness</span>
+                    <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,18px);letter-spacing:-.01em;color:#FFFFFF">6.34</span>
+                  </div>
+                  <div style="height:10px;border-radius:2px;background:rgba(255,255,255,.07);overflow:hidden">
+                    <div style="height:100%;width:20%;background:#8FA9B5"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px">
+                    <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Veterans Pro Cricket</span>
+                    <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,18px);letter-spacing:-.01em">31.38</span>
+                  </div>
+                  <div style="height:10px;border-radius:2px;background:rgba(255,255,255,.07);overflow:hidden">
+                    <div style="height:100%;width:100%;background:rgba(255,255,255,.16)"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption style="font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;letter-spacing:.04em;color:#8E8E8E">Instagram growth · Jan 1 – Sep 2026 · opening follower count derived from current total less net gain</figcaption>
+        </figure>
+      </article>
+
+      <article data-case="" style="display:grid;grid-template-columns:1fr;gap:clamp(24px,3vw,40px);border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;padding:clamp(24px,3vw,40px)">
+        <div>
+          <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Instagram · @veteransprocricket</span>
+          <h3 style="margin:12px 0 0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(21px,2.3vw,28px);line-height:1.15;letter-spacing:-.02em">Veterans Pro Cricket International</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.7;font-weight:300;color:#B4B4B4">A sports community account grown on the same posting cadence as the clinic — but with five times the follower yield per post.</p>
+          <dl style="margin:22px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden">
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">8,221</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Followers</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">+3,138</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Net gain, YTD</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">31.38</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Followers / post</dt>
+            </div>
+            <div style="background:#181818;padding:16px 18px">
+              <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em">12.07</dd>
+              <dt style="margin-top:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Followers / day</dt>
+            </div>
+          </dl>
+        </div>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:10px">
+          <div style="border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#161616;padding:clamp(22px,2.4vw,32px)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px">
+              <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Audience, year to date</span>
+              <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.06em;color:#8FA9B5">+61.7%</span>
+            </div>
+            <div style="display:flex;height:clamp(40px,4.4vw,52px);border-radius:2px;overflow:hidden;background:rgba(255,255,255,.07)">
+              <div style="width:62%;background:#3A4F5A"></div>
+              <div style="width:38%;background:#8FA9B5"></div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:22px;margin-top:14px">
+              <div style="display:flex;align-items:center;gap:9px">
+                <span style="width:9px;height:9px;background:#3A4F5A;flex:none"></span>
+                <span style="font-size:11.5px;color:#8E8E8E">5,083 at Jan 1</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:9px">
+                <span style="width:9px;height:9px;background:#8FA9B5;flex:none"></span>
+                <span style="font-size:11.5px;color:#FFFFFF">+3,138 added</span>
+              </div>
+            </div>
+            <div style="margin-top:clamp(24px,2.6vw,32px);padding-top:clamp(20px,2.2vw,26px);border-top:1px solid rgba(255,255,255,.1)">
+              <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E;margin-bottom:16px">Same cadence, five times the yield</div>
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <div>
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px">
+                    <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E">Posts per week</span>
+                    <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,18px);letter-spacing:-.01em">2.69</span>
+                  </div>
+                  <div style="height:10px;border-radius:2px;background:rgba(255,255,255,.07);overflow:hidden">
+                    <div style="height:100%;width:9%;background:rgba(255,255,255,.16)"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px">
+                    <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8FA9B5">Followers per post</span>
+                    <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.5vw,18px);letter-spacing:-.01em;color:#FFFFFF">31.38</span>
+                  </div>
+                  <div style="height:10px;border-radius:2px;background:rgba(255,255,255,.07);overflow:hidden">
+                    <div style="height:100%;width:100%;background:#8FA9B5"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption style="font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;letter-spacing:.04em;color:#8E8E8E">Instagram growth · Jan 1 – Sep 2026 · opening follower count derived from current total less net gain</figcaption>
+        </figure>
+      </article>
+
+      <article style="border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#1E1E1E;padding:clamp(24px,3vw,40px)">
+        <div style="max-width:60ch">
+          <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA9B5">Faceless channel · @tw30 · started Jul 15, 2026</span>
+          <h3 style="margin:12px 0 0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(21px,2.3vw,28px);line-height:1.15;letter-spacing:-.02em">The World in 30 Seconds</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.7;font-weight:300;color:#B4B4B4">A zero-budget, fully automated short-form channel built as a test bed: one production pipeline, three platforms, all organic. Nine weeks from launch to 26K+ combined views.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:clamp(16px,1.8vw,22px);margin-top:clamp(26px,3vw,36px)">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.12)">
+              <span style="font-family:'Space Grotesk',sans-serif;font-size:14px;letter-spacing:.04em">YouTube</span>
+              <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8FA9B5">Last 90 days</span>
+            </div>
+            <dl style="margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden">
+              <div style="background:#181818;padding:14px 12px">
+                <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-.02em">6.9K</dd>
+                <dt style="margin-top:4px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E">Views</dt>
+              </div>
+              <div style="background:#181818;padding:14px 12px">
+                <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-.02em">22.1</dd>
+                <dt style="margin-top:4px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E">Watch hrs</dt>
+              </div>
+              <div style="background:#181818;padding:14px 12px">
+                <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-.02em">+314</dd>
+                <dt style="margin-top:4px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E">Subs</dt>
+              </div>
+            </dl>
+            <p style="margin:0;font-size:12.5px;line-height:1.65;font-weight:300;color:#8E8E8E">Views and watch time both up &gt;999% on the prior 90 days — the channel had no meaningful base before launch.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.12)">
+              <span style="font-family:'Space Grotesk',sans-serif;font-size:14px;letter-spacing:.04em">TikTok</span>
+              <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8FA9B5">+367.6%</span>
+            </div>
+            <dl style="margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden">
+              <div style="background:#181818;padding:14px 12px">
+                <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-.02em">8.4K</dd>
+                <dt style="margin-top:4px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E">Views</dt>
+              </div>
+              <div style="background:#181818;padding:14px 12px">
+                <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-.02em">172</dd>
+                <dt style="margin-top:4px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E">Likes</dt>
+              </div>
+              <div style="background:#181818;padding:14px 12px">
+                <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-.02em">+760%</dd>
+                <dt style="margin-top:4px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E">Likes Δ</dt>
+              </div>
+            </dl>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.12)">
+              <span style="font-family:'Space Grotesk',sans-serif;font-size:14px;letter-spacing:.04em">Meta</span>
+              <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8FA9B5">100% organic</span>
+            </div>
+            <dl style="margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden">
+              <div style="background:#181818;padding:14px 12px">
+                <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-.02em">10.9K</dd>
+                <dt style="margin-top:4px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E">Views</dt>
+              </div>
+              <div style="background:#181818;padding:14px 12px">
+                <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-.02em">6.4K</dd>
+                <dt style="margin-top:4px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E">Reach</dt>
+              </div>
+              <div style="background:#181818;padding:14px 12px">
+                <dd style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-.02em">201</dd>
+                <dt style="margin-top:4px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E">Interactions</dt>
+              </div>
+            </dl>
+            <p style="margin:0;font-size:12.5px;line-height:1.65;font-weight:300;color:#8E8E8E">7,225 of the views came through Instagram, every one of them organic — nothing behind a paid boost.</p>
+          </div>
+        </div>
+        <figure style="margin:clamp(20px,2.4vw,30px) 0 0;display:flex;flex-direction:column;gap:10px">
+          <div style="border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#161616;padding:clamp(22px,2.4vw,32px)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:clamp(22px,2.4vw,30px)">
+              <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Views by platform, first nine weeks</span>
+              <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.06em;color:#8FA9B5">26.2K combined</span>
+            </div>
+            <div style="display:flex;align-items:flex-end;gap:clamp(14px,2.4vw,34px);height:clamp(140px,16vw,190px);border-bottom:1px solid rgba(255,255,255,.14)">
+              <div style="flex:1;height:100%;display:flex;flex-direction:column;gap:10px">
+                <span style="flex:none;text-align:center;font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.6vw,20px);letter-spacing:-.01em">6.9K</span>
+                <div style="flex:1;min-height:0;display:flex;align-items:flex-end">
+                  <div style="width:100%;height:63%;background:#3A4F5A;border-radius:2px 2px 0 0"></div>
+                </div>
+              </div>
+              <div style="flex:1;height:100%;display:flex;flex-direction:column;gap:10px">
+                <span style="flex:none;text-align:center;font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.6vw,20px);letter-spacing:-.01em">8.4K</span>
+                <div style="flex:1;min-height:0;display:flex;align-items:flex-end">
+                  <div style="width:100%;height:77%;background:#4A6572;border-radius:2px 2px 0 0"></div>
+                </div>
+              </div>
+              <div style="flex:1;height:100%;display:flex;flex-direction:column;gap:10px">
+                <span style="flex:none;text-align:center;font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,1.6vw,20px);letter-spacing:-.01em;color:#FFFFFF">10.9K</span>
+                <div style="flex:1;min-height:0;display:flex;align-items:flex-end">
+                  <div style="width:100%;height:100%;background:#8FA9B5;border-radius:2px 2px 0 0"></div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;gap:clamp(14px,2.4vw,34px);margin-top:12px">
+              <span style="flex:1;text-align:center;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8E8E8E">YouTube</span>
+              <span style="flex:1;text-align:center;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8E8E8E">TikTok</span>
+              <span style="flex:1;text-align:center;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8E8E8E">Meta</span>
+            </div>
+          </div>
+          <figcaption style="font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;letter-spacing:.04em;color:#8E8E8E">Platform analytics · Jul 15 – Sep 17 2026 · zero paid spend</figcaption>
+        </figure>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="credentials" data-screen-label="Education and awards" data-reveal="" style="border-top:1px solid rgba(255,255,255,.08)">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,12vh,150px) clamp(20px,4vw,56px)">
+    <div data-split="" style="display:grid;grid-template-columns:1fr;gap:clamp(36px,5vw,72px);align-items:start">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(20px,3vw,28px)">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#8E8E8E">Education &amp; Awards</span>
+        </div>
+        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(26px,3.4vw,46px);line-height:1.14;letter-spacing:-.03em;max-width:20ch;text-wrap:pretty">Trained in computer science. Certified where it counts.</h2>
+      </div>
+      <ol style="margin:0;padding:0 0 0 clamp(20px,2.4vw,32px);list-style:none;border-left:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;gap:clamp(26px,3vw,38px)">
+        <li style="position:relative">
+          <span style="position:absolute;left:calc(clamp(20px,2.4vw,32px) * -1 - 4.5px);top:9px;width:8px;height:8px;border-radius:50%;background:#4A6572"></span>
+          <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Degree</div>
+          <div style="margin-top:8px;font-family:'Space Grotesk',sans-serif;font-size:clamp(18px,1.9vw,24px);line-height:1.25">BSc Computer Science</div>
+          <div style="margin-top:6px;font-size:14px;font-weight:300;color:#B4B4B4">Sacred Heart College</div>
+        </li>
+        <li style="position:relative">
+          <span style="position:absolute;left:calc(clamp(20px,2.4vw,32px) * -1 - 4.5px);top:9px;width:8px;height:8px;border-radius:50%;background:#4A6572"></span>
+          <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Award · 2005</div>
+          <div style="margin-top:8px;font-family:'Space Grotesk',sans-serif;font-size:clamp(18px,1.9vw,24px);line-height:1.25">Best in Thesis</div>
+          <div style="margin-top:6px;font-size:14px;line-height:1.65;font-weight:300;color:#B4B4B4;max-width:52ch">Guitar Learning System — software developed in Visual Basic with Flash MX, text-to-speech and embedded video tutorials.</div>
+        </li>
+        <li style="position:relative">
+          <span style="position:absolute;left:calc(clamp(20px,2.4vw,32px) * -1 - 4.5px);top:9px;width:8px;height:8px;border-radius:50%;background:#4A6572"></span>
+          <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Award · 2005</div>
+          <div style="margin-top:8px;font-family:'Space Grotesk',sans-serif;font-size:clamp(18px,1.9vw,24px);line-height:1.25">Best in Web Design</div>
+          <div style="margin-top:6px;font-size:14px;line-height:1.65;font-weight:300;color:#B4B4B4;max-width:52ch">Inter-school, inter-department competition — designed the website for the campus.</div>
+        </li>
+        <li style="position:relative">
+          <span style="position:absolute;left:calc(clamp(20px,2.4vw,32px) * -1 - 4.5px);top:9px;width:8px;height:8px;border-radius:50%;background:#4A6572"></span>
+          <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Active certifications</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:1px;margin-top:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden">
+            <div style="background:#1E1E1E;padding:18px 20px;display:flex;align-items:center;gap:14px"><span style="flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:rgba(74,101,114,.28);border:1px solid rgba(143,169,181,.45)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8FA9B5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><span style="display:flex;flex-direction:column;gap:3px"><span style="font-family:'Space Grotesk',sans-serif;font-size:15px;line-height:1.25">Prompt Engineering</span><span style="display:flex;align-items:center;gap:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FA9B5"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#8FA9B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Certified</span></span></div>
+            <div style="background:#1E1E1E;padding:18px 20px;display:flex;align-items:center;gap:14px"><span style="flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:rgba(74,101,114,.28);border:1px solid rgba(143,169,181,.45)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8FA9B5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9h10M7 13h6"/><path d="M9 22l3-4 3 4"/></svg></span><span style="display:flex;flex-direction:column;gap:3px"><span style="font-family:'Space Grotesk',sans-serif;font-size:15px;line-height:1.25">Facebook Blueprint</span><span style="display:flex;align-items:center;gap:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FA9B5"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#8FA9B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Certified</span></span></div>
+            <div style="background:#1E1E1E;padding:18px 20px;display:flex;align-items:center;gap:14px"><span style="flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:rgba(74,101,114,.28);border:1px solid rgba(143,169,181,.45)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8FA9B5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V12M10 20V8M15 20V4M20 20v-6"/></svg></span><span style="display:flex;flex-direction:column;gap:3px"><span style="font-family:'Space Grotesk',sans-serif;font-size:15px;line-height:1.25">Power BI</span><span style="display:flex;align-items:center;gap:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FA9B5"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#8FA9B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Certified</span></span></div>
+            <div style="background:#1E1E1E;padding:18px 20px;display:flex;align-items:center;gap:14px"><span style="flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:rgba(74,101,114,.28);border:1px solid rgba(143,169,181,.45)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8FA9B5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M4 16l5-5 4 3 7-8"/><path d="M16 6h4v4"/></svg></span><span style="display:flex;flex-direction:column;gap:3px"><span style="font-family:'Space Grotesk',sans-serif;font-size:15px;line-height:1.25">Advanced Google Analytics</span><span style="display:flex;align-items:center;gap:5px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FA9B5"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#8FA9B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Certified</span></span></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="contact" data-screen-label="Contact" data-reveal="" style="border-top:1px solid rgba(255,255,255,.08)">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,12vh,150px) clamp(20px,4vw,56px)">
+    <div data-split="" style="display:grid;grid-template-columns:1fr;gap:clamp(36px,5vw,72px);align-items:start">
+      <div>
+        <figure style="margin:0;border-radius:4px;overflow:hidden;background:#1E1E1E">
+          <img src="assets/creator-portrait.jpg" alt="Portrait of JC Vista smiling with an espresso cup in front of his dual-monitor workspace" loading="lazy" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 38%" />
+        </figure>
+        <div style="margin-top:clamp(24px,3vw,32px);display:flex;flex-direction:column">
+          <a href="mailto:jcnvista@gmail.com" style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid rgba(255,255,255,.12)">
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Email</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:15px">jcnvista@gmail.com</span>
+          </a>
+          <a href="tel:+971528589974" style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid rgba(255,255,255,.12)">
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Phone</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:15px">+971 52 858 9974</span>
+          </a>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)">
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Location</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:15px">Dubai, UAE</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(20px,3vw,28px)">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4A6572;flex:none"></span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#8E8E8E">The Creator</span>
+        </div>
+        <h2 style="margin:0 0 clamp(28px,4vw,40px);font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(26px,3.4vw,46px);line-height:1.14;letter-spacing:-.03em;max-width:22ch;text-wrap:pretty">Tell me what you're trying to grow.</h2>
+
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="border:1px solid #4A6572;border-radius:4px;background:rgba(74,101,114,.14);padding:clamp(28px,3vw,40px)">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2vw,26px);letter-spacing:-.02em">Almost there — hit send.</div>
+            <p style="margin:12px 0 0;font-size:14.5px;line-height:1.7;font-weight:300;color:#C9C9C9">Your email app should have opened with your message ready to go — just press send. If nothing opened, email me directly at <a href="mailto:jcnvista@gmail.com" style="color:#8FA9B5;border-bottom:1px solid rgba(143,169,181,.4)">jcnvista@gmail.com</a>. I reply within one business day.</p>
+            <button type="button" onClick="{{ resetForm }}" style="margin-top:22px;background:transparent;border:1px solid rgba(255,255,255,.24);border-radius:4px;color:#fff;padding:12px 20px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:border-color .2s" style-hover="border-color:#8FA9B5">Send another</button>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ open }}" hint-placeholder-val="{{ true }}">
+          <form noValidate="" onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:22px">
+            <div style="display:flex;flex-direction:column;gap:9px">
+              <label for="cf-name" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Name</label>
+              <input id="cf-name" name="name" type="text" autoComplete="name" placeholder="Your name" value="{{ name }}" onChange="{{ onName }}" onBlur="{{ checkName }}" style="background:#1E1E1E;border:1px solid rgba(255,255,255,.14);border-radius:4px;color:#fff;font-size:15px;padding:16px 18px;min-height:48px;width:100%;transition:border-color .2s" style-focus="border-color:#8FA9B5" />
+              <sc-if value="{{ nameErr }}" hint-placeholder-val="{{ false }}">
+                <span role="alert" style="font-size:12.5px;color:#E9A6A6">{{ nameErr }}</span>
+              </sc-if>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:9px">
+              <label for="cf-email" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Email</label>
+              <input id="cf-email" name="email" type="email" inputMode="email" autoComplete="email" placeholder="you@company.com" value="{{ email }}" onChange="{{ onEmail }}" onBlur="{{ checkEmail }}" style="background:#1E1E1E;border:1px solid rgba(255,255,255,.14);border-radius:4px;color:#fff;font-size:15px;padding:16px 18px;min-height:48px;width:100%;transition:border-color .2s" style-focus="border-color:#8FA9B5" />
+              <sc-if value="{{ emailErr }}" hint-placeholder-val="{{ false }}">
+                <span role="alert" style="font-size:12.5px;color:#E9A6A6">{{ emailErr }}</span>
+              </sc-if>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:9px">
+              <label for="cf-msg" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E8E">Project</label>
+              <textarea id="cf-msg" name="message" rows="5" placeholder="Channel, stage, and what success looks like." value="{{ msg }}" onChange="{{ onMsg }}" style="background:#1E1E1E;border:1px solid rgba(255,255,255,.14);border-radius:4px;color:#fff;font-size:15px;padding:16px 18px;width:100%;resize:vertical;line-height:1.6;transition:border-color .2s" style-focus="border-color:#8FA9B5"></textarea>
+              <sc-if value="{{ msgErr }}" hint-placeholder-val="{{ false }}">
+                <span role="alert" style="font-size:12.5px;color:#E9A6A6">{{ msgErr }}</span>
+              </sc-if>
+            </div>
+            <button type="submit" style="align-self:flex-start;background:#FFFFFF;color:#121212;border:0;border-radius:4px;padding:17px 32px;min-height:48px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .2s" style-hover="background:#DCE3E6">Send message</button>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer" style="position:relative;min-height:clamp(420px,58vh,620px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);background:#0d0d0d">
+  <sc-if value="{{ film }}" hint-placeholder-val="{{ true }}">
+    <video id="filmC" muted="" loop="" playsInline="" preload="none" poster="assets/desk-detail.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+      <source src="assets/hero-loop.mp4" type="video/mp4" />
+    </video>
+  </sc-if>
+  <sc-if value="{{ still }}" hint-placeholder-val="{{ false }}">
+    <img src="assets/desk-detail.jpg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+  </sc-if>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,18,18,.55) 0%,rgba(18,18,18,.78) 60%,#121212 100%)"></div>
+  <div aria-hidden="true" style="position:relative;width:100%;text-align:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(56px,16.5vw,290px);line-height:.86;letter-spacing:-.045em;color:rgba(255,255,255,.1);white-space:nowrap;pointer-events:none">JC VISTA</div>
+  <div style="position:relative;max-width:1440px;margin:0 auto;width:100%;padding:clamp(28px,4vw,44px) clamp(20px,4vw,56px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid rgba(255,255,255,.12);padding-top:clamp(20px,2.4vw,28px)">
+      <span style="font-size:12px;letter-spacing:.1em;color:#8E8E8E">© 2026 JC Vista · Growth Marketing Leader &amp; Web Developer</span>
+      <div style="display:flex;gap:22px">
+        <a href="mailto:jcnvista@gmail.com" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E" style-hover="color:#FFFFFF">Email</a>
+        <a href="https://www.linkedin.com/in/jcvista" target="_blank" rel="noopener" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E" style-hover="color:#FFFFFF">LinkedIn</a>
+        <a href="#top" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8E8E8E" style-hover="color:#FFFFFF">Top</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky actions: back to top (after the hero) and WhatsApp -->
+<div style="position:fixed;right:calc(clamp(16px,2.4vw,28px) + env(safe-area-inset-right));bottom:calc(clamp(16px,2.4vw,28px) + env(safe-area-inset-bottom));z-index:90;display:flex;flex-direction:column;align-items:center;gap:12px">
+  <a href="#top" aria-label="Back to top" style="width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:rgba(30,30,30,.86);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:{{ upOpacity }};pointer-events:{{ upEvents }};transform:translateY({{ upShift }});transition:opacity .3s ease, transform .3s ease, border-color .2s" style-hover="border-color:#8FA9B5">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </a>
+  <a href="https://wa.me/971528589974" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" style="width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25D366;box-shadow:0 10px 28px rgba(0,0,0,.45);transition:transform .2s" style-hover="transform:scale(1.06)">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+  </a>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroFilm&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;revealOnScroll&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { nav: false, up: false, menu: false, name: '', email: '', msg: '', nameErr: '', emailErr: '', msgErr: '', sent: false };
+
+  componentDidMount() {
+    this.onScroll = () => {
+      const on = window.scrollY > 40;
+      if (on !== this.state.nav) this.setState({ nav: on });
+      const up = window.scrollY > window.innerHeight;
+      if (up !== this.state.up) this.setState({ up });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+    this.injectResponsive();
+    this.setupFilm();
+    this.setupReveal();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    if (this.io) this.io.disconnect();
+    if (this.fio) this.fio.disconnect();
+    if (this.flightRaf) cancelAnimationFrame(this.flightRaf);
+    if (this.onFlightResize) window.removeEventListener('resize', this.onFlightResize);
+  }
+
+  // Media queries cannot be expressed inline; injected once at mount.
+  injectResponsive() {
+    if (document.getElementById('jcv-mq')) return;
+    const s = document.createElement('style');
+    s.id = 'jcv-mq';
+    s.textContent = [
+      '@media (min-width: 760px){[data-masonry]{columns:2 !important}}',
+      '@media (min-width: 1100px){[data-masonry]{columns:3 !important}}',
+      '@media (min-width: 900px){[data-split]{grid-template-columns:1fr 1fr !important}',
+      '[data-herogrid]{grid-template-columns:1.25fr .75fr !important}',
+      '[data-desknav]{display:flex !important}[data-mobnav]{display:none !important}}',
+      // Phones: drop the Direct Line card so the hero film (and the face in it) has room.
+      '@media (max-width: 899px){[data-directline]{display:none !important}}',
+      // Phones: no "JC VISTA" watermark over the face in the opening frame.
+      '@media (max-width: 899px){[data-herofade]{display:none !important}}',
+      // Desktop: show the whole 16:9 frame rather than cropping it to fill tall windows.
+      '@media (min-width: 900px){[data-leg]{object-fit:contain !important}}',
+      '@media (min-width: 900px){#contact [data-split]{grid-template-columns:.85fr 1.15fr !important}}',
+      '@media (min-width: 960px){[data-case]{grid-template-columns:.8fr 1.2fr !important}}'
+    ].join('');
+    document.head.appendChild(s);
+  }
+
+  setupFilm() {
+    const c = document.getElementById('filmC');
+    const rate = 0.6;
+    if (c) { c.playbackRate = rate; c.addEventListener('loadedmetadata', () => { c.playbackRate = rate; }); }
+    this.setupFlight();
+    if (c) {
+      this.fio = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) { const p = c.play(); if (p && p.catch) p.catch(() => {}); }
+          else c.pause();
+        });
+      }, { rootMargin: '200px' });
+      this.fio.observe(c);
+    }
+  }
+
+  // Hero flight: scroll position scrubs a chain of pre-rendered camera legs.
+  // Each leg is fetched as a Blob so it is always seekable (no byte-range dependency).
+  setupFlight() {
+    const sec = document.getElementById('top');
+    const stage = document.getElementById('flightStage');
+    const legs = Array.from(document.querySelectorAll('[data-leg]'));
+    if (!sec || !stage || !legs.length) return;
+    const copy = document.querySelector('[data-herocopy]');
+    const mark = document.querySelector('[data-herofade]');
+    const shade = document.getElementById('flightShade');
+    const caps = Array.from(document.querySelectorAll('[data-cap]'));
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mobile = window.matchMedia('(max-width: 860px), (hover: none) and (pointer: coarse)').matches;
+    const PER = 1.6;    // viewport heights of scroll per leg
+    const SEAM = 0.04;  // crossfade half-width at each seam, in legs
+    if (reduce) { stage.style.position = 'relative'; return; }
+
+    const N = legs.length;
+    const cur = legs.map(() => 0);
+    const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+    const ramp = (v, a, b) => clamp((v - a) / (b - a), 0, 1);
+    let vh = window.innerHeight, lastW = window.innerWidth, pinTop = 0;
+
+    const layout = () => {
+      vh = window.innerHeight;
+      const h = stage.offsetHeight;
+      pinTop = Math.min(0, vh - h);  // a stage taller than the viewport pins by its bottom edge
+      stage.style.top = pinTop + 'px';
+      sec.style.height = (h + N * PER * vh) + 'px';
+    };
+    const get = url => fetch(url).then(r => r.ok ? r.blob() : Promise.reject(new Error(url)));
+    const load = v => {
+      if (v.dataset.loaded) return;
+      v.dataset.loaded = '1';
+      // Phones get the native 9:16 render; fall back to the desktop clip if it is missing.
+      const blob = mobile && v.dataset.srcM ? get(v.dataset.srcM).catch(() => get(v.dataset.src)) : get(v.dataset.src);
+      blob.then(b => {
+          v.src = URL.createObjectURL(b);
+          v.addEventListener('loadeddata', () => { try { v.pause(); } catch (e) {} }, { once: true });
+          v.load();
+        })
+        .catch(() => { delete v.dataset.loaded; });
+    };
+    if (mobile) legs.forEach(v => { if (v.dataset.posterM) v.poster = v.dataset.posterM; });
+    const progress = () => {
+      const range = sec.offsetHeight - stage.offsetHeight;
+      const start = sec.getBoundingClientRect().top + window.scrollY - pinTop;
+      return range > 0 ? clamp((window.scrollY - start) / range, 0, 1) : 0;
+    };
+    const frame = () => {
+      const t = progress() * N;  // 0..N across the whole flight
+      const i = Math.min(N - 1, Math.floor(t));
+      legs.forEach((v, k) => {
+        if (Math.abs(k - i) <= 1) load(v);
+        // Frame-matched seams: fade the incoming leg in over a short band around each boundary.
+        let op = k === i ? 1 : 0;
+        if (k === i + 1) op = ramp(t, k - SEAM, k + SEAM);
+        v.style.opacity = String(op);
+        const d = v.duration;
+        if (!d || isNaN(d) || (op === 0 && k !== i)) return;
+        const target = clamp(t - k, 0, 1) * (d - 0.05);
+        cur[k] += (target - cur[k]) * 0.22;
+        // Coalesce seeks: never queue a new one while the decoder is still busy.
+        if (!v.seeking && Math.abs(v.currentTime - cur[k]) > 0.01) v.currentTime = cur[k];
+      });
+      // Hero copy owns the opening; it hands the frame to the discipline captions.
+      const out = ramp(t, 0.1, 0.32);
+      if (copy) { copy.style.opacity = String(1 - out); copy.style.transform = 'translateY(' + (-24 * out) + 'px)'; copy.style.pointerEvents = out > 0.5 ? 'none' : ''; }
+      if (mark) mark.style.opacity = String(1 - out);
+      if (shade) shade.style.opacity = String(1 - 0.45 * out);
+      caps.forEach(el => {
+        const k = +el.dataset.cap;
+        const a = ramp(t, k + (k === 0 ? 0.42 : 0.12), k + (k === 0 ? 0.56 : 0.26)) * (1 - ramp(t, k + 0.86, k + 0.98));
+        el.style.opacity = String(a);
+        el.style.transform = 'translateY(' + (16 * (1 - a)) + 'px)';
+      });
+      this.flightRaf = requestAnimationFrame(frame);
+    };
+    // iOS won't paint a seeked frame in a never-played muted video; prime on first touch.
+    const prime = () => {
+      legs.forEach(v => { if (v.src) { const p = v.play(); if (p && p.then) p.then(() => v.pause()).catch(() => {}); } });
+      window.removeEventListener('touchstart', prime);
+    };
+    this.onFlightResize = () => {
+      // Touch browsers fire height-only resizes as the URL bar moves; relayout only on real changes.
+      if (mobile && window.innerWidth === lastW) return;
+      lastW = window.innerWidth;
+      layout();
+    };
+    window.addEventListener('resize', this.onFlightResize);
+    window.addEventListener('orientationchange', () => setTimeout(layout, 250));
+    window.addEventListener('touchstart', prime, { passive: true });
+    layout();
+    load(legs[0]);
+    this.flightRaf = requestAnimationFrame(frame);
+  }
+
+  setupReveal() {
+    if (this.props.revealOnScroll === false) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
+    nodes.forEach(n => {
+      n.style.transition = 'opacity .7s ease, transform .7s ease';
+      n.style.willChange = 'opacity, transform';
+    });
+    const show = el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      this.io.unobserve(el);
+    };
+    this.io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        // Reveal on entry, and also anything the viewport has already jumped past
+        // (deep links / programmatic scroll never fire an intersecting frame for it).
+        if (en.isIntersecting || en.boundingClientRect.bottom < 0) show(en.target);
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+    nodes.forEach(n => {
+      const r = n.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92) return;
+      n.style.opacity = '0';
+      n.style.transform = 'translateY(22px)';
+      this.io.observe(n);
+    });
+  }
+
+  validEmail(v) { return /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(v.trim()); }
+
+  renderVals() {
+    const film = this.props.heroFilm !== false;
+    return {
+      film,
+      still: !film,
+      navBg: this.state.nav ? 'rgba(18,18,18,.88)' : 'transparent',
+      navBorder: this.state.nav ? 'rgba(255,255,255,.1)' : 'transparent',
+      navBlur: this.state.nav ? 'blur(16px)' : 'none',
+      upOpacity: this.state.up ? '1' : '0',
+      upEvents: this.state.up ? 'auto' : 'none',
+      upShift: this.state.up ? '0' : '12px',
+      menuOpen: this.state.menu,
+      toggleMenu: () => this.setState(s => ({ menu: !s.menu })),
+      closeMenu: () => this.setState({ menu: false }),
+      name: this.state.name,
+      email: this.state.email,
+      msg: this.state.msg,
+      nameErr: this.state.nameErr,
+      emailErr: this.state.emailErr,
+      msgErr: this.state.msgErr,
+      sent: this.state.sent,
+      open: !this.state.sent,
+      onName: e => this.setState({ name: e.target.value, nameErr: '' }),
+      onEmail: e => {
+        const v = e.target.value;
+        this.setState(s => ({ email: v, emailErr: s.emailErr && this.validEmail(v) ? '' : s.emailErr }));
+      },
+      onMsg: e => this.setState({ msg: e.target.value, msgErr: '' }),
+      checkName: () => this.setState(s => ({ nameErr: s.name.trim() ? '' : 'Please add your name.' })),
+      checkEmail: () => this.setState(s => ({
+        emailErr: !s.email.trim() ? 'Please add your email.' : (this.validEmail(s.email) ? '' : 'That email doesn’t look right.')
+      })),
+      resetForm: () => this.setState({ sent: false, name: '', email: '', msg: '', nameErr: '', emailErr: '', msgErr: '' }),
+      submit: e => {
+        e.preventDefault();
+        const { name, email, msg } = this.state;
+        const nameErr = name.trim() ? '' : 'Please add your name.';
+        const emailErr = !email.trim() ? 'Please add your email.' : (this.validEmail(email) ? '' : 'That email doesn’t look right.');
+        const msgErr = msg.trim().length >= 10 ? '' : 'A sentence or two about the project, please.';
+        if (nameErr || emailErr || msgErr) {
+          this.setState({ nameErr, emailErr, msgErr });
+          const bad = document.getElementById(nameErr ? 'cf-name' : emailErr ? 'cf-email' : 'cf-msg');
+          if (bad) bad.focus();
+          return;
+        }
+        // No backend: hand the message to the visitor's own email app, pre-filled.
+        const subject = `Project enquiry from ${name.trim()}`;
+        const body = `${msg.trim()}\n\n— ${name.trim()}\n${email.trim()}`;
+        window.location.href = `mailto:jcnvista@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        this.setState({ sent: true, nameErr: '', emailErr: '', msgErr: '' });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

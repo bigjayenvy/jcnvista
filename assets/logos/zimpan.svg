@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="ZIMPAN">
+  <title>ZIMPAN</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a78bfa" />
+      <stop offset="50%" stop-color="#7856f5" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+  </defs>
+  <!-- The mark reversed out of the brand gradient, so it holds its colour on a
+       light tab strip and a dark one alike — no prefers-color-scheme needed. -->
+  <rect x="2" y="2" width="96" height="96" rx="28" fill="url(#g)" />
+  <path d="M28 27 H72 L28 73 H72" fill="none" stroke="#fff" stroke-width="10"
+        stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="28" cy="27" r="7.5" fill="#fff" />
+  <circle cx="72" cy="73" r="7.5" fill="#fff" />
+</svg>

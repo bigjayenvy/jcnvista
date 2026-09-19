@@ -1,0 +1,11 @@
+# Working files — kept locally, not published
+assets/flight/src/
+uploads/
+.claude/
+.thumbnail
+*.backup.html
+_raf-test.html
+
+# Source photos no longer referenced by the page
+assets/creator-in-flow.jpg
+assets/portrait-maker.png
