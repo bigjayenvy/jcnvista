@@ -29,6 +29,20 @@
 </helmet>
 <div style="position:relative;width:100%;background:#121212">
 
+<!-- Preloader: covers the page until every image, video and font has downloaded. -->
+<noscript><style>#preloader{display:none !important}</style></noscript>
+<div id="preloader" role="status" aria-live="polite" style="position:fixed;inset:0;z-index:200;background:#121212;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(18px,3vw,26px);padding:24px;text-align:center;transition:opacity .55s ease">
+  <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#FFFFFF">
+    <span style="width:7px;height:7px;background:#4A6572;flex:none"></span>JC VISTA
+  </div>
+  <div style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#C9C9C9">Loading JC Vista - Portfolio</div>
+  <div style="width:min(280px,64vw);height:2px;background:rgba(255,255,255,.14);overflow:hidden">
+    <span id="preloaderBar" style="display:block;height:100%;width:0%;background:#8FA9B5;transition:width .3s ease"></span>
+  </div>
+  <div id="preloaderPct" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.18em;color:#8E8E8E">0%</div>
+</div>
+
+
 <header style="position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s ease, border-color .35s ease, backdrop-filter .35s ease;border-bottom:1px solid {{ navBorder }};background:{{ navBg }};backdrop-filter:{{ navBlur }};-webkit-backdrop-filter:{{ navBlur }}">
   <nav style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px);height:clamp(64px,7vw,80px);display:flex;align-items:center;justify-content:space-between;gap:24px">
     <a href="#top" style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#fff">
@@ -1137,6 +1151,7 @@ class Component extends DCLogic {
     window.addEventListener('scroll', this.onScroll, { passive: true });
     this.onScroll();
     this.injectResponsive();
+    this.setupPreloader();
     this.setupFilm();
     this.setupReveal();
   }
@@ -1186,6 +1201,68 @@ class Component extends DCLogic {
       }, { rootMargin: '200px' });
       this.fio.observe(c);
     }
+  }
+
+  // Preloader: hold the page behind a progress screen until every image, video
+  // and font is in the browser cache, so nothing pops in while scrolling.
+  setupPreloader() {
+    const box = document.getElementById('preloader');
+    if (!box) return;
+    const bar = document.getElementById('preloaderBar');
+    const pct = document.getElementById('preloaderPct');
+    const html = document.documentElement;
+    const mobile = window.matchMedia('(max-width: 860px), (hover: none) and (pointer: coarse)').matches;
+
+    const urls = new Set();
+    document.querySelectorAll('img[src]').forEach(n => urls.add(n.getAttribute('src')));
+    document.querySelectorAll('video[poster]').forEach(n => urls.add(n.getAttribute('poster')));
+    document.querySelectorAll('video source[src]').forEach(n => urls.add(n.getAttribute('src')));
+    document.querySelectorAll('[data-leg]').forEach(n => urls.add((mobile && n.dataset.srcM) || n.dataset.src));
+    const list = [...urls].filter(Boolean);
+
+    const bytes = list.map(() => 0);   // downloaded per file
+    const sizes = list.map(() => 0);   // content-length per file, when the server sends one
+    let done = 0;
+    const paint = () => {
+      const known = sizes.reduce((a, b) => a + b, 0);
+      const got = bytes.reduce((a, b) => a + b, 0);
+      // Byte progress once sizes are known, otherwise fall back to files finished.
+      const ratio = known > 0 ? got / known : done / Math.max(1, list.length);
+      const p = Math.max(0, Math.min(100, Math.round(ratio * 100)));
+      if (bar) bar.style.width = p + '%';
+      if (pct) pct.textContent = p + '%';
+    };
+
+    const pull = (url, i) => fetch(url).then(res => {
+      if (!res.ok || !res.body) return res.blob().catch(() => null);
+      const len = +res.headers.get('content-length');
+      if (len) { sizes[i] = len; paint(); }
+      const reader = res.body.getReader();
+      const step = () => reader.read().then(({ done: end, value }) => {
+        if (end) return;
+        bytes[i] += value.length;
+        paint();
+        return step();
+      });
+      return step();
+    }).catch(() => {}).then(() => { done++; if (!sizes[i]) paint(); });
+
+    const reveal = () => {
+      if (box.dataset.gone) return;
+      box.dataset.gone = '1';
+      if (bar) bar.style.width = '100%';
+      if (pct) pct.textContent = '100%';
+      html.style.overflow = '';
+      box.style.opacity = '0';
+      setTimeout(() => { box.style.display = 'none'; }, 600);
+    };
+
+    html.style.overflow = 'hidden';
+    window.scrollTo(0, 0);
+    // Never trap the visitor behind the loader if the network stalls.
+    const cap = setTimeout(reveal, 30000);
+    const fonts = document.fonts ? document.fonts.ready.catch(() => {}) : Promise.resolve();
+    Promise.all([fonts, ...list.map(pull)]).then(() => { clearTimeout(cap); reveal(); });
   }
 
   // Hero flight: scroll position scrubs a chain of pre-rendered camera legs.
