@@ -1160,6 +1160,7 @@ class Component extends DCLogic {
     window.removeEventListener('scroll', this.onScroll);
     if (this.io) this.io.disconnect();
     if (this.fio) this.fio.disconnect();
+    if (this.inlineTimer) clearInterval(this.inlineTimer);
     if (this.flightRaf) cancelAnimationFrame(this.flightRaf);
     if (this.onFlightResize) window.removeEventListener('resize', this.onFlightResize);
   }
@@ -1187,15 +1188,34 @@ class Component extends DCLogic {
     document.head.appendChild(s);
   }
 
+  // Force inline, muted playback in JS: the template renders muted=""/playsInline=""
+  // as falsy properties, so the attributes never reach the DOM.
+  keepInline(v) {
+    if (!v) return;
+    v.muted = true;
+    v.defaultMuted = true;
+    v.playsInline = true;
+    v.controls = false;
+    v.setAttribute('muted', '');
+    v.setAttribute('playsinline', '');
+    v.setAttribute('webkit-playsinline', '');
+  }
+
   setupFilm() {
     const c = document.getElementById('filmC');
+    this.keepInline(c);
+    // Re-renders strip the attributes back off, so keep re-asserting them.
+    this.inlineTimer = setInterval(() => {
+      const v = document.getElementById('filmC');
+      if (v && !v.playsInline) this.keepInline(v);
+    }, 500);
     const rate = 0.6;
     if (c) { c.playbackRate = rate; c.addEventListener('loadedmetadata', () => { c.playbackRate = rate; }); }
     this.setupFlight();
     if (c) {
       this.fio = new IntersectionObserver(entries => {
         entries.forEach(en => {
-          if (en.isIntersecting) { const p = c.play(); if (p && p.catch) p.catch(() => {}); }
+          if (en.isIntersecting) { this.keepInline(c); const p = c.play(); if (p && p.catch) p.catch(() => {}); }
           else c.pause();
         });
       }, { rootMargin: '200px' });
@@ -1282,6 +1302,10 @@ class Component extends DCLogic {
     const SEAM = 0.04;  // crossfade half-width at each seam, in legs
     if (reduce) { stage.style.position = 'relative'; return; }
 
+    // The template drops the muted/playsinline attributes, and iOS hands any
+    // video without them to the fullscreen system player the moment it plays.
+    legs.forEach(v => this.keepInline(v));
+
     const N = legs.length;
     const cur = legs.map(() => 0);
     const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -1318,6 +1342,8 @@ class Component extends DCLogic {
       const t = progress() * N;  // 0..N across the whole flight
       const i = Math.min(N - 1, Math.floor(t));
       legs.forEach((v, k) => {
+        // Re-assert after any re-render: the template strips these attributes.
+        if (!v.playsInline) this.keepInline(v);
         if (Math.abs(k - i) <= 1) load(v);
         // Frame-matched seams: fade the incoming leg in over a short band around each boundary.
         let op = k === i ? 1 : 0;
@@ -1345,7 +1371,7 @@ class Component extends DCLogic {
     };
     // iOS won't paint a seeked frame in a never-played muted video; prime on first touch.
     const prime = () => {
-      legs.forEach(v => { if (v.src) { const p = v.play(); if (p && p.then) p.then(() => v.pause()).catch(() => {}); } });
+      legs.forEach(v => { this.keepInline(v); if (v.src) { const p = v.play(); if (p && p.then) p.then(() => v.pause()).catch(() => {}); } });
       window.removeEventListener('touchstart', prime);
     };
     this.onFlightResize = () => {
